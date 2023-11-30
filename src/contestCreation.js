@@ -232,20 +232,24 @@ if (!sportspageResponse.error) {
     const eventTime = convertToUnixTimestamp((sportspageResponse.data['results']['0']['schedule']['date']).trim());
     const awayTeamString = sportspageResponse.data['results']['0']['teams']['away']['team'].trim();
     const homeTeamString = sportspageResponse.data['results']['0']['teams']['home']['team'].trim();
-    if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString)) {
-      awayTeam = teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString).id;
-    } else if (awayTeamString === rundownAwayTeamString) {
-      awayTeam = rundownAwayTeamId;
-    } else {
-      throw Error ("Sportspage away team name error")
-    }
-    if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString)) {
-      homeTeam = teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString).id;
-    } else if (homeTeamString === rundownHomeTeamString) {
-      homeTeam = rundownHomeTeamId;
-    } else {
-      throw Error ("Sportspage home team name error")
-    }
+    const awayTeam = (() => {
+      if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString)) {
+        return teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString).id;
+      } else if (awayTeamString === rundownAwayTeamString) {
+        return rundownAwayTeamId;
+      } else {
+        throw Error ("Sportspage away team name error")
+      }
+    })();
+    const homeTeam = (() => {
+      if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString)) {
+        return teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString).id;
+      } else if (homeTeamString === rundownHomeTeamString) {
+        return rundownHomeTeamId;
+      } else {
+        throw Error ("Sportspage home team name error")
+      }
+    })();
     sportspageResult = convertContestDataToUint256(league, eventTime, awayTeam, homeTeam);
   }
 } else {
@@ -259,20 +263,24 @@ if (!jsonoddsResponseAll.error) {
     const eventTime = convertToUnixTimestamp((jsonoddsResponse['MatchTime']).trim() + "Z");
     const awayTeamString = jsonoddsResponse['AwayTeam'].trim();
     const homeTeamString = jsonoddsResponse['HomeTeam'].trim();
-    if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString)) {
-      awayTeam = teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString).id;
-    } else if (awayTeamString === rundownAwayTeamString) {
-      awayTeam = rundownAwayTeamId;
-    } else {
-      throw Error ("Jsonodds away team name error")
-    }
-    if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString)) {
-      homeTeam = teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString).id;
-    } else if (homeTeamString === rundownHomeTeamString) {
-      homeTeam = rundownHomeTeamId;
-    } else {
-      throw Error ("Jsonodds home team name error")
-    }
+    const awayTeam = (() => {
+      if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString)) {
+        return teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString).id;
+      } else if (awayTeamString === rundownAwayTeamString) {
+        return rundownAwayTeamId;
+      } else {
+        throw Error ("Jsonodds away team name error")
+      }
+    })();
+    const homeTeam = (() => {
+      if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString)) {
+        return teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString).id;
+      } else if (homeTeamString === rundownHomeTeamString) {
+        return rundownHomeTeamId;
+      } else {
+        throw Error ("Jsonodds home team name error")
+      }
+    })();
     jsonoddsResult = convertContestDataToUint256(league, eventTime, awayTeam, homeTeam);
   }
 } else {
