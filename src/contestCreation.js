@@ -209,7 +209,7 @@ if (!rundownResponse.error) {
     const homeTeam = rundownResponse.data['teams_normalized']['1']['team_id'];
     rundownAwayTeamId = awayTeam;
     rundownHomeTeamId = homeTeam;
-    if (league === 1) {
+    if (league === 1 || league === 5) {
       rundownAwayTeamString = rundownResponse.data['teams_normalized']['0']['name'];
       rundownHomeTeamString = rundownResponse.data['teams_normalized']['1']['name'];
     } else {
