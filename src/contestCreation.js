@@ -239,7 +239,7 @@ if (secrets.rapidapiKey == "" ) {
       const awayTeamString = sportspageResponse.data['results']['0']['teams']['away']['team'].trim();
       const homeTeamString = sportspageResponse.data['results']['0']['teams']['home']['team'].trim();
       const awayTeam = (() => {
-        if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString)) {
+        if ((league === 1 || league === 5) && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString)) {
           return teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === awayTeamString).id;
         } else if (awayTeamString === rundownAwayTeamString) {
           return rundownAwayTeamId;
@@ -248,7 +248,7 @@ if (secrets.rapidapiKey == "" ) {
         }
       })();
       const homeTeam = (() => {
-        if (league === 1 && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString)) {
+        if ((league === 1 || league === 5) && teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString)) {
           return teamLegend.find(x => x.leagueId === league && x.sportspageTeamName === homeTeamString).id;
         } else if (homeTeamString === rundownHomeTeamString) {
           return rundownHomeTeamId;
@@ -270,7 +270,7 @@ if (secrets.rapidapiKey == "" ) {
       const awayTeamString = jsonoddsResponse['AwayTeam'].trim();
       const homeTeamString = jsonoddsResponse['HomeTeam'].trim();
       const awayTeam = (() => {
-        if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString)) {
+        if ((league === 1 || league === 5) && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString)) {
           return teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === awayTeamString).id;
         } else if (awayTeamString === rundownAwayTeamString) {
           return rundownAwayTeamId;
@@ -279,7 +279,7 @@ if (secrets.rapidapiKey == "" ) {
         }
       })();
       const homeTeam = (() => {
-        if (league === 1 && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString)) {
+        if ((league === 1 || league === 5) && teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString)) {
           return teamLegend.find(x => x.leagueId === league && x.jsonoddsTeamName === homeTeamString).id;
         } else if (homeTeamString === rundownHomeTeamString) {
           return rundownHomeTeamId;
