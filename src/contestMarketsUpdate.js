@@ -62,13 +62,13 @@ const convertFullMarketDataToUint256 = (oddsData) => {
   
   // Pack into 38-digit format matching OracleModule.extractContestMarketData:
   // [moneylineAway(5)][moneylineHome(5)][spread(4)][spreadAwayLine(5)][spreadHomeLine(5)][total(4)][overLine(5)][underLine(5)]
-  return BigInt(normalizedMoneylineAway) * BigInt(1e33) +
-         BigInt(normalizedMoneylineHome) * BigInt(1e28) +
-         BigInt(normalizedSpreadNumber) * BigInt(1e24) +
-         BigInt(normalizedSpreadAway) * BigInt(1e19) +
-         BigInt(normalizedSpreadHome) * BigInt(1e14) +
-         BigInt(normalizedTotalNumber) * BigInt(1e10) +
-         BigInt(normalizedOverLine) * BigInt(1e5) +
+  return BigInt(normalizedMoneylineAway) * BigInt("1000000000000000000000000000000000") + // 1e33
+         BigInt(normalizedMoneylineHome) * BigInt("10000000000000000000000000000") + // 1e28
+         BigInt(normalizedSpreadNumber) * BigInt("1000000000000000000000000") + // 1e24
+         BigInt(normalizedSpreadAway) * BigInt("10000000000000000000") + // 1e19
+         BigInt(normalizedSpreadHome) * BigInt("100000000000000") + // 1e14
+         BigInt(normalizedTotalNumber) * BigInt("10000000000") + // 1e10
+         BigInt(normalizedOverLine) * BigInt("100000") + // 1e5
          BigInt(normalizedUnderLine);
 };
 
