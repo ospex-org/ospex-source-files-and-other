@@ -2,7 +2,7 @@ if (secrets.jsonapiKey == "") {
   throw Error("JSON_API_KEY environment variable not set.");
 }
 
-const jsonoddsId = args[0];
+const jsonoddsId = args[2];
 
 const normalizeOdds = (odds) => {
   if (!odds) return 0;
