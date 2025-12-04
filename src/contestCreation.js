@@ -191,6 +191,12 @@ if (secrets.rapidapiKey == "" ) {
       id: 22
     },
     {
+      leagueId: 4,
+      sportspageTeamName: 'Portland Trail Blazers',
+      jsonoddsTeamName: 'Portland Trail Blazers',
+      id: 19
+    },
+    {
       leagueId: 5,
       sportspageTeamName: 'Connecticut',
       jsonoddsTeamName: 'Connecticut',
