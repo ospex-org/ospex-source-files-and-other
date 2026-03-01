@@ -207,6 +207,18 @@ if (secrets.rapidapiKey == "" ) {
       jsonoddsTeamName: 'Miami Florida',
       id: 293
     },
+    {
+      leagueId: 5,
+      sportspageTeamName: 'Mississippi',
+      jsonoddsTeamName: 'Mississippi',
+      id: 316
+    },
+    {
+      leagueId: 5,
+      sportspageTeamName: "St. Mary's (CA)",
+      jsonoddsTeamName: 'Saint Marys CA',
+      id: 1685
+    },
   ];
       
   let rundownResult;
