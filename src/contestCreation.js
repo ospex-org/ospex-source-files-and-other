@@ -215,6 +215,11 @@ if (secrets.rapidapiKey == "" ) {
     },
     {
       leagueId: 5,
+      jsonoddsTeamName: 'North Carolina State',
+      id: 307
+    },
+    {
+      leagueId: 5,
       sportspageTeamName: "St. Mary's (CA)",
       jsonoddsTeamName: 'Saint Marys CA',
       id: 1685
