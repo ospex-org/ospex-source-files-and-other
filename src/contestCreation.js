@@ -214,6 +214,11 @@ if (secrets.rapidapiKey == "" ) {
     },
     {
       leagueId: 5,
+      jsonoddsTeamName: 'Miami Ohio',
+      id: 294
+    },
+    {
+      leagueId: 5,
       sportspageTeamName: 'Mississippi',
       jsonoddsTeamName: 'Mississippi',
       id: 316
