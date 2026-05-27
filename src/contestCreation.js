@@ -189,7 +189,7 @@ if (secrets.rapidapiKey == "" ) {
       sportspageTeamName: 'Athletics',
       jsonoddsTeamName: 'Athletics',
       id: 58
-    }
+    },
     {
       leagueId: 4,
       sportspageTeamName: 'Los Angeles Clippers',
